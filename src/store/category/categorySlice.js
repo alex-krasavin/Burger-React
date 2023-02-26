@@ -7,7 +7,7 @@ const initialState = {
     activeCategory: 0,
 };
 
-export const categoryRequestAsync = createAsyncThunk("category/fetch",(data,obj) => {
+export const categoryRequestAsync = createAsyncThunk("category/fetch",() => {
     return fetch(`${API_URL}${POSTFIX_PRODUCT}/category`)
     .then(req => req.json())
     .catch(error => {{error}})
