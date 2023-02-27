@@ -22,17 +22,18 @@ const categorySlice = createSlice({
             state.activeCategory = action.payload.indexCategory
         }
     },
-    extraReducers: {
-        [categoryRequestAsync.pending.type]:(state) => {
+    extraReducers: (builder) => {
+        builder
+        .addCase(categoryRequestAsync.pending.type,(state) => {
             state.error = "";
-        },
-        [categoryRequestAsync.fulfilled.type]:(state,action) => {
+        })
+        .addCase(categoryRequestAsync.fulfilled.type,(state,action) => {
             state.error = "";
             state.category = action.payload;
-        },
-        [categoryRequestAsync.rejected.type]:(state,action) => {
+        })
+        .addCase(categoryRequestAsync.rejected.type,(state,action) => {
             state.error = action.payload.error;
-        },
+        })
     }
 });
 
