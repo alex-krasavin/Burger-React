@@ -90,6 +90,11 @@
   margin-bottom: 8px;
 }
 
+.submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 .apeal {
   display: flex;
   align-items: center;
